@@ -1,0 +1,418 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polar's Affiliate Store</title>
+    <style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    padding: 50px;
+    background: #f28b82; /* Light red */
+    text-align: center;
+}
+header h1 {
+    font-size: 3em;
+    color: white;
+}
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+header nav a:hover {
+    color: #333;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+main h2 {
+    color: #f28b82;
+    margin-bottom: 10px;
+}
+
+/* About Section */
+#about {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #ffe6e6;
+    border-radius: 8px;
+}
+
+/* Product Section */
+#products {
+    margin-bottom: 30px;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+.product {
+    background: #ffe6e6;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #f28b82;
+}
+.product p {
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Buy Button */
+.buy-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #f28b82;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.buy-button:hover {
+    background: #c9443e;
+}
+
+/* Contact Section */
+#contact {
+    padding: 15px;
+    background: #ffe6e6;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+form label {
+    margin-top: 10px;
+}
+form input, form textarea, form button {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #f28b82;
+}
+form input, form textarea {
+    width: 100%;
+    background: white;
+    color: #333;
+}
+form button {
+    background-color: #f28b82;
+    color: white;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #c9443e;
+}
+
+/* Footer */
+footer {
+    padding: 15px;
+    background: #f28b82;
+    text-align: center;
+}
+footer p {
+    color: white;
+}
+.social-media a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.social-media a:hover {
+    color: #ffe6e6;
+}
+/* FAQ Section */
+#faq {
+    padding: 30px;
+    background-color: #ffe6e6; /* Light red */
+    border-radius: 8px;
+    margin: 30px 0;
+}
+#faq h2 {
+    color: #f28b82;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.faq-item {
+    margin-bottom: 15px;
+}
+.faq-item h3 {
+    color: #f28b82;
+    margin-bottom: 5px;
+}
+.faq-item p {
+    color: #333;
+    margin-left: 15px;
+    font-size: 0.9rem;
+}
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f28b82;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+#back-to-top:hover {
+    background-color: #ff7675;
+}
+/* Testimonials Section */
+#testimonials {
+    padding: 30px;
+    background-color: #ffe6e6; /* Light red background */
+    border-radius: 8px;
+    margin: 30px 0;
+    text-align: center;
+}
+#testimonials h2 {
+    color: #f28b82; /* Heading color */
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.testimonial {
+    background: white;
+    border: 1px solid #f28b82;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.testimonial p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+.testimonial h4 {
+    font-size: 1.1rem;
+    color: #f28b82;
+    font-weight: bold;
+}
+.testimonial:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+h2 {
+    font-size: 2em;
+    color: #f28b82;
+  }
+  h4 {
+    font-size: 1em;
+    color: #f28b82;
+  }
+    </style>
+</head>
+<body>
+<!-- Back to Top Button -->
+<button id="back-to-top" onclick="scrollToTop()">↑ Back to Top</button>
+
+    <!-- Header -->
+    <header>
+        <h1>PolarPDF Store</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+<marquee behavior="scroll" direction="left"><h2>"Flash Sale Alert! Only 2 hours left – Don't miss out!".<a href=" https://polarpdf.gumroad.com/">click here</a></h2></marquee>
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to <b>PolarPDF</b>! Your one-stop destination for premium, high-quality PDFs. Whether you're a student, professional, or a curious learner, we offer carefully curated content to help you achieve your goals.</p>
+            <p>At <b>PolarPDF</b>, we believe in the power of knowledge and its accessibility. That's why we provide a diverse range of PDFs covering educational resources, guides, and more, available for seamless purchase through <b>Gumroad.com</b>.</p>
+            <p>Our mission is simple: <b>to deliver valuable resources in a convenient and affordable way</b>. With a focus on clarity, relevance, and user satisfaction, we ensure every PDF you download adds value to your personal or professional journey.</p>
+            <p>Thank you for choosing <b>PolarPDF</b>. Let's grow, learn, and succeed together.</p>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product">
+                          <p><h2>52% OFF</h2></p>
+          <p><h4><i> "Limited Edition Offer – This might be your last chance!"</i></h4></p>
+                    <p><b>CSS PDF</b></p>
+                    <p>"This guide helped me ace my CSS design skills!" - <i>A satisfied customer</i></p>
+                    <button class="buy-button" onclick="window.open('https://polarpdf.gumroad.com/l/css', '_blank')">Buy </button><br>
+               
+                    <b>Ratings:</b> 4.6<br>
+                    <b>Total Sells:</b> 6500+<br>
+                  <b>Price:</b> <s>$25</s>&nbsp;&nbsp;$12
+                </div>
+                <!-- Product 2 -->
+                <div class="product">
+          <p><h2>66.67% OFF</h2></p>
+          <p><h4><i> "Limited Edition Offer – This might be your last chance!"</i></h4></p>
+          
+                    <p><b>Business Guide: 50+ Tips to Sell Any Product</b></p>
+                    <p>"A must-have for anyone starting a business!" - <i>Entrepreneur</i></p>
+                    <button class="buy-button" onclick="window.open('https://polarpdf.gumroad.com/l/Business', '_blank')">Buy </button><br>
+                    <b>Ratings:</b> 4.9<br>
+                    <b>Total Sells:</b> 5000+<br>
+                                      <b>Price:</b> <s>$30</s>&nbsp;&nbsp;$10
+                </div>
+            </div>
+        </section>
+        <!-- FAQs Section -->
+<section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <h3>What is PolarPDF?</h3>
+        <p>PolarPDF is an online store offering high-quality PDFs for students, professionals, and lifelong learners.</p>
+    </div>
+    <div class="faq-item">
+        <h3>How can I purchase a PDF?</h3>
+        <p>You can purchase PDFs directly through our Gumroad links available on each product page.</p>
+    </div>
+    <div class="faq-item">
+        <h3>What payment methods are accepted?</h3>
+        <p>We accept major payment methods such as credit/debit cards and digital wallets supported by Gumroad.</p>
+    </div>
+</section>
+<!-- Testimonials Section -->
+<section id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial">
+            <p>"The CSS PDF is simply outstanding! It made learning CSS so much easier. Highly recommended."</p>
+            <h4>- John Doe</h4>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial">
+            <p>"The Business Guide gave me actionable tips that helped me boost my sales by 50%. A must-read for entrepreneurs!"</p>
+            <h4>- Jane Smith</h4>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial">
+            <p>"PolarPDF's resources are top-notch. They are affordable, well-organized, and super helpful. Great work!"</p>
+            <h4>- Chris Brown</h4>
+        </div>
+
+    <!-- Testimonial 4 -->
+<div class="testimonial">
+    <p>"I never thought learning CSS could be this easy. The PDF is well-structured and full of practical examples."</p>
+    <h4>- Emily Carter</h4>
+</div>
+
+<!-- Testimonial 5 -->
+<div class="testimonial">
+    <p>"This Business Guide is a game-changer! The tips helped me understand how to market my products effectively."</p>
+    <h4>- Mark Wilson</h4>
+</div>
+
+<!-- Testimonial 6 -->
+<div class="testimonial">
+    <p>"PolarPDF provides top-quality resources. The content is detailed, up-to-date, and easy to understand."</p>
+    <h4>- Sophia Turner</h4>
+</div>
+
+<!-- Testimonial 7 -->
+<div class="testimonial">
+    <p>"The PDFs saved me so much time. The curated information is exactly what I needed to prepare for my exams."</p>
+    <h4>- Ravi Kumar</h4>
+</div>
+
+<!-- Testimonial 8 -->
+<div class="testimonial">
+    <p>"I loved how user-friendly the Business Guide is. Even beginners can use it to scale their businesses."</p>
+    <h4>- Aisha Mohammed</h4>
+</div>
+
+<!-- Testimonial 9 -->
+<div class="testimonial">
+    <p>"Highly recommend PolarPDF to anyone looking for affordable yet premium educational resources."</p>
+    <h4>- Liam Davis</h4>
+</div>
+
+<!-- Testimonial 10 -->
+<div class="testimonial">
+    <p>"The design and clarity of these PDFs are unmatched. Perfect for students and professionals alike."</p>
+    <h4>- Elena Garcia</h4>
+</div>
+</div>
+</section>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need further assistance, feel free to reach out.</p>
+            <form action="https://api.web3forms.com/submit" method="post">
+                <input type="hidden" name="access_key" value="e3c9532c-5bcb-4ba3-b1c6-b30e6e40326d">
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+<script>
+// Back to Top Functionality
+window.onscroll = function () {
+    const btn = document.getElementById('back-to-top');
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 PolarPDF Store</p>
+        <div class="social-media">
+            <a href="https://youtube.com/@baba_india?si=U8rN-4OIfWgn2Nfg" target="_blank">Youtube</a>
+            <a href="https://x.com/Polar000001?t=7fzVw3mgag57diCKllkxWw&s=09" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/john.david8968?igsh=MWF4MGpldWRrbW45ZA==" target="_blank">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
